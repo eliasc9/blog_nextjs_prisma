@@ -1,0 +1,2 @@
+- I will keep the recommended tecnologies because this is a technical test
+- While it is expected that an application of this type will have security checks when deletions or add post functionality, it is not required. It is assumed not necessary (in a real example, it could be another application that does it)

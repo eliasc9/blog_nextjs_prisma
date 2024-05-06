@@ -1,3 +1,20 @@
+# Blog NextJS + Prisma
+
+## TODO (Higher priority at the bottom)
+
+- [ ] Test "bad connection"
+- [ ] Endpoint error handling component
+- [ ] Delete confirmation dialog
+- [ ] Post delete button component
+- [ ] Post card component
+- [ ] Filter Posts by userId
+- [ ] List Posts
+- [ ] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
+- [ ] Setup Prisma ORM (add .env to git)
+- [x] Init NextJS project
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
