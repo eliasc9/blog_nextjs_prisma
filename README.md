@@ -5,7 +5,13 @@
 Run migrations to create the SQLite database
 
 ```bash
-npx prisma migrate dev --name init
+npx prisma migrate dev
+```
+
+Seed with users and post
+
+```bash
+npx prisma db seed
 ```
 
 ## TODO (Higher priority at the bottom)
@@ -17,7 +23,7 @@ npx prisma migrate dev --name init
 - [ ] Post card component
 - [ ] Filter Posts by userId
 - [ ] List Posts
-- [ ] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
+- [x] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
 - [x] Setup Prisma ORM (add .env to git)
 - [x] Init NextJS project
 
