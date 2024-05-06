@@ -1,5 +1,13 @@
 # Blog NextJS + Prisma
 
+### Setup Prisma
+
+Run migrations to create the SQLite database
+
+```bash
+npx prisma migrate dev --name init
+```
+
 ## TODO (Higher priority at the bottom)
 
 - [ ] Test "bad connection"
@@ -10,7 +18,7 @@
 - [ ] Filter Posts by userId
 - [ ] List Posts
 - [ ] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
-- [ ] Setup Prisma ORM (add .env to git)
+- [x] Setup Prisma ORM (add .env to git)
 - [x] Init NextJS project
 
 ---
