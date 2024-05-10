@@ -1,5 +1,11 @@
 # Blog NextJS + Prisma
 
+### Run App
+
+```bash
+npm run dev
+```
+
 ### Setup Prisma
 
 Run migrations to create the SQLite database
@@ -16,13 +22,14 @@ npx prisma db seed
 
 ## TODO (Higher priority at the bottom)
 
+- [ ] Production ready
 - [ ] Test "bad connection"
 - [ ] Endpoint error handling component
 - [ ] Delete confirmation dialog
 - [ ] Post delete button component
 - [ ] Post card component
-- [ ] Filter Posts by userId
-- [ ] List Posts
+- [ ] Filter Posts by userId with test
+- [ ] List Posts with test
 - [x] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
 - [x] Setup Prisma ORM (add .env to git)
 - [x] Init NextJS project
