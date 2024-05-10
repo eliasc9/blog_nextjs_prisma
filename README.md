@@ -22,8 +22,9 @@ npx prisma db seed
 
 ## TODO (Higher priority at the bottom)
 
+- [ ] Jest for test
 - [ ] Production ready
-- [ ] Test "bad connection"
+- [ ] Test "bad connection" (Pagination)
 - [ ] Endpoint error handling component
 - [ ] Delete confirmation dialog
 - [ ] Post delete button component

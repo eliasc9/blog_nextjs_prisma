@@ -3,3 +3,4 @@
 - Add production ready
 - Here, I use https://nextjs.org/docs/app/building-your-application/routing
 - I guess a default light theme would be fine since users travel a lot (might be outdoors)
+- The posts has only one user associated
