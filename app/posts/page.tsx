@@ -15,15 +15,12 @@ Show an error
 */
 // 'use client';
 
-import prisma from '@/app/lib/db';
 import Button from '@/app/components/Button'
 import PostsList from '@/app/components/PostsList'
 import { Suspense } from 'react';
 
 
 export default async function Page() {
-  const posts = await prisma.post.findMany()
-
   return (
     <div className="container mx-auto">
       <div>
@@ -37,7 +34,6 @@ export default async function Page() {
         <Suspense fallback="Loading...">
           <PostsList />
         </Suspense>
-        {posts.length === 0 && <p>No posts</p>}
       </div>
     </div>
   )
