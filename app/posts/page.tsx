@@ -1,17 +1,17 @@
 /*
-This is /pages as required
+This is /pages as required ✅
 
-# Filter by userId and pagination
+# Filter by userId and pagination ❌
 
-List or "Card" elements
+List or "Card" elements ✅
 
-Use tailwind css
+Use tailwind css ✅
 
-Each card has a DELETE BUTTON
+Each card has a DELETE BUTTON ✅
 
-Confirmation dialog before DELETE
+Confirmation dialog before DELETE ❌
 
-Show an error
+Show an error ❌
 */
 // 'use client';
 
