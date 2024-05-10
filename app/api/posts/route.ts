@@ -1,50 +1,24 @@
 import prisma from '../../../db'
-import { type NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
+
+function createResponse(success: boolean, message: string, data: any, status: number = 200) {
+  return NextResponse.json({ success, message, data }, { status });
+}
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
-  const userIdString = searchParams.get('userId')
-  let posts
-  
-  if (userIdString) {
+  if (searchParams.has('userId') ) {
+    const userIdString = searchParams.get('userId')
     const userId: number = Number(userIdString)
-    if (userId) {
-      posts = await prisma.post.findMany({ where: { userId } })
-      return NextResponse.json(
-        {
-          success: true,
-          message: `List posts for user ID ${userId}`,
-          data: posts,
-        },
-        {
-          status: 200,
-        }
-      )
-    } else {
-      return NextResponse.json(
-        {
-          success: false,
-          message: 'Invalid userId',
-          data: null,
-        },
-        {
-          status: 400,
-        }
-      )
+    if (isNaN(userId)) {
+      return createResponse(false, 'Invalid userId, must be a number', null, 400)
     }
+    const posts = await prisma.post.findMany({ where: { userId } })
+    return createResponse(true, `List posts for user ID ${userId}`, posts)
   } else {
-    posts = await prisma.post.findMany()
-    return NextResponse.json(
-      {
-        success: true,
-        message: 'List posts',
-        data: posts,
-      },
-      {
-        status: 200,
-      }
-    )
+    const posts = await prisma.post.findMany()
+    return createResponse(true, 'List posts', posts)
   }
 }
