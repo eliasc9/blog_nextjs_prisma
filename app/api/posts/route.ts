@@ -1,9 +1,6 @@
-import prisma from '../../../db'
-import { NextRequest, NextResponse } from 'next/server'
-
-function createResponse(success: boolean, message: string, data: any, status: number = 200) {
-  return NextResponse.json({ success, message, data }, { status });
-}
+import prisma from '@/app/lib/db';
+import { NextRequest } from 'next/server'
+import { createSuccessResponse, createErrorResponse } from '@/app/lib/response';
 
 export const dynamic = 'force-dynamic'
 
@@ -13,12 +10,12 @@ export async function GET(request: NextRequest) {
     const userIdString = searchParams.get('userId')
     const userId: number = Number(userIdString)
     if (isNaN(userId)) {
-      return createResponse(false, 'Invalid userId, must be a number', null, 400)
+      return createErrorResponse('Invalid userId, must be a number')
     }
     const posts = await prisma.post.findMany({ where: { userId } })
-    return createResponse(true, `List posts for user ID ${userId}`, posts)
+    return createSuccessResponse(`List posts for user ID ${userId}`, posts)
   } else {
     const posts = await prisma.post.findMany()
-    return createResponse(true, 'List posts', posts)
+    return createSuccessResponse('List posts', posts)
   }
 }
