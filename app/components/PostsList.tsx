@@ -1,6 +1,5 @@
 import prisma from '@/app/lib/db';
 import { revalidatePath } from 'next/cache';
-import { format } from 'path';
 
 type PostsListProps = {
   userId?: number,
@@ -17,7 +16,7 @@ export default async function PostsList({ userId, page = 0 } : PostsListProps) {
   const deletePost = async (formData: FormData) => {
     "use server";
 
-    await prisma.post.deleteMany({ where : { id: 1 }})
+    await prisma.post.deleteMany({ where : { id: 4 }})
 
     revalidatePath("/posts")
   }
@@ -29,7 +28,7 @@ export default async function PostsList({ userId, page = 0 } : PostsListProps) {
           <li key={post.id} className='block rounded-lg p-2 shadow'>
             <h2 className='font-bold'>{post.title}</h2>
             <p>{post.body}</p>
-            <small>userId: {post.userId}</small>
+            <small>userId: {post.userId}</small> <small>postId: {post.id}</small>
             <form action={deletePost}>
               <button className='bg-red-300'>Delete</button>
             </form>
