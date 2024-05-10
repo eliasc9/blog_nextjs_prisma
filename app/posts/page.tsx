@@ -37,13 +37,6 @@ export default async function Page() {
         <Suspense fallback="Loading...">
           <PostsList />
         </Suspense>
-        {posts.map(post => (
-          <div key={post.id} className='block rounded-lg p-2 shadow'>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <button className='bg-red-500'>Delete</button>
-          </div>
-        ))}
         {posts.length === 0 && <p>No posts</p>}
       </div>
     </div>

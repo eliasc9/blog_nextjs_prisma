@@ -1,7 +1,14 @@
 import prisma from '@/app/lib/db';
 
-export default async function PostsList(userId : number) {
-  const posts = await prisma.post.findMany({ where : { userId }})
+type PostsListProps = {
+  userId?: number,
+  page?: number,
+}
+
+const perPage = 10
+
+export default async function PostsList({ userId, page = 0 } : PostsListProps) {
+  const posts = await prisma.post.findMany({ where : { userId }, take: perPage, skip: page * perPage})
 
   await new Promise((resolve) => setTimeout(resolve, 1000))
 
