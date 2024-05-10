@@ -16,7 +16,7 @@ export default async function PostsList({ userId, page = 0 } : PostsListProps) {
   const deletePost = async (formData: FormData) => {
     "use server";
 
-    await prisma.post.deleteMany({ where : { id: 4 }})
+    await prisma.post.deleteMany({ where : { id: Number(formData.get("postId") as string) }})
 
     revalidatePath("/posts")
   }
@@ -30,6 +30,7 @@ export default async function PostsList({ userId, page = 0 } : PostsListProps) {
             <p>{post.body}</p>
             <small>userId: {post.userId}</small> <small>postId: {post.id}</small>
             <form action={deletePost}>
+              <input type="hidden" name="postId" value={post.id} />
               <button className='bg-red-300'>Delete</button>
             </form>
           </li>
