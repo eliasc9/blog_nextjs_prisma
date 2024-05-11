@@ -1,6 +1,6 @@
 import PostDeleteButton from '@/app/components/PostDeleteButton'
 
-type PostCardProps = {
+export type PostCardProps = {
   id: number,
   title: string,
   body: string | null,

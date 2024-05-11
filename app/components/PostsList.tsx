@@ -1,16 +1,11 @@
-import prisma from '@/app/lib/db';
 import PostCard from '@/app/components/PostCard'
+import { PostCardProps } from '@/app/components/PostCard'
 
 type PostsListProps = {
-  userId?: number,
-  page?: number,
+  posts: Array<PostCardProps>
 }
 
-const perPage = 10
-
-export default async function PostsList({ userId, page = 0 } : PostsListProps) {
-  const posts = await prisma.post.findMany({ where : { userId }, take: perPage, skip: page * perPage})
-
+export default async function PostsList({ posts } : PostsListProps) {
   return (
     <>
       <ul>
