@@ -9,9 +9,9 @@ Use tailwind css ✅
 
 Each card has a DELETE BUTTON ✅
 
-Confirmation dialog before DELETE ❌
+Confirmation dialog before DELETE (in progress)
 
-Show an error ❌
+Show an error (in progress)
 */
 // 'use client';
 
@@ -19,6 +19,7 @@ import prisma from '@/app/lib/db';
 import PostsList from '@/app/components/PostsList'
 import PostsFilter from '@/app/components/PostsFilter'
 import PostsPagination from '../components/PostsPagination';
+import Error from '../components/Error';
 import { Suspense } from 'react';
 
 const PER_PAGE = 12
@@ -44,6 +45,7 @@ export default async function Page({params, searchParams}: PageProps) {
 
   return (
     <div className="container mx-auto">
+      <Error message='No error haha' />
       <PostsFilter />
       <PostsPagination totalPages={totalPages} page={page} />
       <Suspense fallback="Loading...">
