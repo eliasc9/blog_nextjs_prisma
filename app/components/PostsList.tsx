@@ -1,31 +1,23 @@
 import prisma from '@/app/lib/db';
-import PostDeleteButton from '@/app/components/PostDeleteButton'
+import PostCard from '@/app/components/PostCard'
 
 type PostsListProps = {
   userId?: number,
   page?: number,
 }
 
-const perPage = 999
+const perPage = 10
 
 export default async function PostsList({ userId, page = 0 } : PostsListProps) {
   const posts = await prisma.post.findMany({ where : { userId }, take: perPage, skip: page * perPage})
 
-  // await new Promise((resolve) => setTimeout(resolve, 1000))
-
   return (
     <>
       <ul>
-        {posts.map((post) => (
-          <li key={post.id} className='block rounded-lg p-2 shadow'>
-            <h2 className='font-bold'>{post.title}</h2>
-            <p>{post.body}</p>
-            <small>userId: {post.userId}</small> <small>postId: {post.id}</small>
-            <PostDeleteButton postId={post.id} />
-          </li>
+        {posts.map(post => (
+          <PostCard key={post.id} {...post} />
         ))}
       </ul>
-
       {posts.length === 0 && <p>No posts</p>}
     </>
   )
