@@ -1,5 +1,6 @@
 import prisma from '@/app/lib/db';
-import { revalidatePath } from "next/cache";
+import { revalidatePath } from "next/cache"
+import PostDeleteConfirmDialog from '@/app/components/PostDeleteConfirmDialog'
 
 type PostDeleteButtonProps = {
   postId?: number,
@@ -16,6 +17,7 @@ export default async function PostDeleteButton({ postId } : PostDeleteButtonProp
 
   return (
     <>
+      <PostDeleteConfirmDialog />
       <form action={deletePost}>
         <input type="hidden" name="postId" value={postId} />
         <button className='bg-red-300'>Delete</button>

@@ -8,7 +8,7 @@ export default function PostsFilter() {
   const [userId, setUserId] = useState("");
 
   const onClick = () => {
-    router.push(`?userId=${userId}`)
+    router.push(`?userId=${userId}`) // BUG
   }
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
