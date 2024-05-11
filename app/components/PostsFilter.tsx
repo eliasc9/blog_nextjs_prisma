@@ -14,7 +14,6 @@ export default function PostsFilter() {
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserId(event.target.value)
   }
-  
 
   return(
     <>
