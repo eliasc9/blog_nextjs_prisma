@@ -1,9 +1,8 @@
 'use client'
 
-import PostDeleteButton from '@/app/components/PostDeleteButton'
-import { useState, Suspense } from "react";
+import { useState } from "react";
 
-export default function PostDeleteConfirmDialog({ postId } : { postId?: number }) {
+export default function PostDeleteConfirmDialog({ postId, children } : { postId?: number, children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
 
   const onClick = (postId?: number) => {
@@ -17,10 +16,7 @@ export default function PostDeleteConfirmDialog({ postId } : { postId?: number }
       </button>
 
       <div className={open ? "" : "hidden"}>
-        Aqui el modal
-        <Suspense fallback="Loading...">
-          {open && <PostDeleteButton postId={postId} />}
-        </Suspense>
+        {children}
       </div>
     </>
   )

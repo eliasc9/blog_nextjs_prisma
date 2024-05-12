@@ -1,4 +1,5 @@
 import PostDeleteConfirmDialog from '@/app/components/PostDeleteConfirmDialog'
+import PostDeleteButton from '@/app/components/PostDeleteButton'
 
 export type PostCardProps = {
   id: number,
@@ -18,7 +19,9 @@ export default async function PostCard({id, title, body, userId} : PostCardProps
         <div className='flex flex-row'>
           <a href='#'>
             <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">userId {userId}</span>
-            <PostDeleteConfirmDialog postId={id} />
+            <PostDeleteConfirmDialog key={id} postId={id} >
+              <PostDeleteButton postId={id} />
+            </PostDeleteConfirmDialog>
           </a>
         </div>
       </li>
