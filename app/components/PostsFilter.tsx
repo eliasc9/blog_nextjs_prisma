@@ -30,9 +30,9 @@ export default function PostsFilter({ currentUserId } : { currentUserId: number 
   return(
     <>
       <div>
-        <form className='flex flex-row space-x-4'>
-          <input value={userId} onChange={onChange} placeholder="Filter by userId" className='p-2 rounded shadow'/>
-          <button className='p-2 rounded shadow bg-primary text-neutral-50 hover:bg-secondary' onClick={onClick}>Filter</button>
+        <form className='flex flex-row space-x-2 mt-12 mb-6'>
+          <input value={userId} onChange={onChange} placeholder="Filter by userId" className='px-2 font-normal border-b'/>
+          <button className='py-1.5 px-4 bg-black text-neutral-200 hover:bg-neutral-700 hover:text-neutral-50 font-bold' onClick={onClick}>Filter</button>
         </form>
       </div>
     </>

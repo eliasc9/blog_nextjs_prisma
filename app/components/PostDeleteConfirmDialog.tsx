@@ -16,13 +16,11 @@ export default function PostDeleteConfirmDialog({ postId, children } : { postId?
 
   return (
     <>
-      <button className='' onClick={open}>
-        <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Delete postId {postId}</span>
-      </button>
+      <button className="px-1 underline font-bold text-xs text-red-700 hover:text-red-500" onClick={open}>Delete?{/* (postId {postId})*/}</button>
 
       <Transition appear show={isOpen}>
         <Dialog as="div" className="relative z-10 focus:outline-none" onClose={close}>
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto bg-black bg-opacity-50">
             <div className="flex min-h-full items-center justify-center p-4">
               <TransitionChild
                 enter="ease-out duration-300"
@@ -32,16 +30,16 @@ export default function PostDeleteConfirmDialog({ postId, children } : { postId?
                 leaveFrom="opacity-100 transform-[scale(100%)]"
                 leaveTo="opacity-0 transform-[scale(95%)]"
               >
-                <DialogPanel className="w-full max-w-md rounded-xl bg-white/5 p-6 backdrop-blur-2xl">
-                  <DialogTitle as="h3" className="text-base/7 font-medium text-white">
-                    Confirm the deletion
+                <DialogPanel className="w-full max-w-md bg-white p-6 border">
+                  <DialogTitle as="h3" className="mb-1.5 text-xl font-bold tracking-tight">
+                    Confirm Post Deletion?
                   </DialogTitle>
-                  <p className="mt-2 text-sm/6 text-white/50">
-                    Are you sure?
+                  <p className="text-neutral-950 font-extralight">
+                    Are you sure you want to delete this post? This action cannot be undone.
                   </p>
-                  <div className="mt-4">
+                  <div className="mt-4 flex flex-row space-x-2">
                     <Button
-                      className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                      className="pr-2 font-bold text-xm hover:text-neutral-700 underline"
                       onClick={close}
                     >
                       Cancel

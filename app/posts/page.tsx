@@ -2,8 +2,8 @@ import prisma from '@/app/lib/db';
 import PostsList from '@/app/components/PostsList'
 import PostsFilter from '@/app/components/PostsFilter'
 import PostsPagination from '../components/PostsPagination';
-import Error from '../components/Error';
 import { Suspense } from 'react';
+import Link from 'next/link'
 
 const PER_PAGE = 12
 
@@ -28,11 +28,9 @@ export default async function Page({params, searchParams}: PageProps) {
 
   return (
     <>
-      <div className="container mx-auto flex flex-col space-y-2 my-6">
-        <div className='flex flex-row justify-between px-6'>
-          <h1 className='text-2xl font-bold'>Blog posts</h1>
-          <PostsFilter currentUserId={userId}/>
-        </div>
+      <div className='container mx-auto flex flex-col space-y-4 my-6 items-center'>
+        <Link href="/posts"><h1 className='text-3xl font-extralight hover:underline'>Blog posts</h1></Link>
+        <PostsFilter currentUserId={userId}/>
         <Suspense fallback="Loading...">
           <PostsList posts={posts} />
         </Suspense>
@@ -40,7 +38,6 @@ export default async function Page({params, searchParams}: PageProps) {
         {/* <Error title='Error deleting a post' message='The post could not be deleted'/> */}
       </div>
       <div className="h-32"></div>
-      
     </>
   )
 }

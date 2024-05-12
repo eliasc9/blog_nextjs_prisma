@@ -20,8 +20,8 @@ export default async function PostDeleteButton({ postId } : PostDeleteButtonProp
     <>
       <form action={deletePost}>
         <input type="hidden" name="postId" value={postId} />
-        <button className=''>
-          <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Confirm?</span>
+        <button className="py-1.5 px-4 font-bold text-white bg-red-500 hover:bg-red-600">
+          Delete Post
         </button>
       </form>
     </>

@@ -38,11 +38,11 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
         <li key={i}>
           <button
             onClick={() => onClick(i)}
-            className={`py-2 px-4 border shadow ${
+            className={`py-2 px-4 border-t border-b font-bold ${
               i === currentPage
-                ? 'bg-primary text-neutral-50'
-                : ''
-            } hover:bg-secondary`}
+                ? 'bg-black text-neutral-200 hover:bg-neutral-700 hover:text-neutral-50'
+                : 'bg-white text-neutral-800 hover:bg-neutral-300 hover:text-neutral-950 underline'
+            } `}
           >
             {i}
           </button>
@@ -55,11 +55,13 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
 
   return (
     <>
-      <ul className="inline-flex -space-x-px text-base flex-row justify-center">
+      <ul className="inline-flex -space-x-px flex-row justify-center text-sm pt-2">
         <li>
           <button
             onClick={() => onClick(currentPage - 1)}
-            className='py-2 px-4 border rounded-l-lg shadow disabled:opacity-50 hover:bg-secondary disabled:hover:bg-white' disabled={currentPage === 1}
+            className="text-xs py-2.5 px-4 border-l border-t border-b font-bold bg-white text-neutral-800 hover:bg-neutral-300 hover:text-neutral-950 disabled:opacity-50"
+            
+            disabled={currentPage === 1}
           >
             Previous
           </button>
@@ -68,7 +70,8 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
         <li>
           <button
             onClick={() => onClick(currentPage + 1)}
-            className='py-2 px-4 border rounded-r-lg shadow disabled:opacity-50 hover:bg-secondary disabled:hover:bg-white' disabled={currentPage === totalPages}
+            className="text-xs py-2.5 px-4 border-r border-t border-b font-bold bg-white text-neutral-800 hover:bg-neutral-300 hover:text-neutral-950 disabled:opacity-50"
+            disabled={currentPage === totalPages}
           >
             Next
           </button>
