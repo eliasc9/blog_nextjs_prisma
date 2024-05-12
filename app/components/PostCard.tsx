@@ -17,12 +17,13 @@ export default async function PostCard({id, title, body, userId} : PostCardProps
           <p className='font-normal text-gray-700 dark:text-gray-400'>{body}</p>
         </div>
         <div className='flex flex-row'>
-          <a href='#'>
-            <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">userId {userId}</span>
-            <PostDeleteConfirmDialog key={id} postId={id} >
-              <PostDeleteButton postId={id} />
-            </PostDeleteConfirmDialog>
-          </a>
+          <div>
+           <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">userId {userId}</span>
+          </div>
+          
+          <PostDeleteConfirmDialog key={id} postId={id} >
+            <PostDeleteButton postId={id} />
+          </PostDeleteConfirmDialog>
         </div>
       </li>
     </>
