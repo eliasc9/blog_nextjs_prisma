@@ -22,16 +22,17 @@ npx prisma db seed
 
 ## TODO (Higher priority at the bottom)
 
-- [ ] QA: 404, empty, return link to correct
+- [ ] QA: 404, empty, return link to correct, colores (dark/white)
 - [ ] Jest for test
 - [ ] Production ready
-- [ ] Test "bad connection" (Pagination)
+- [ ] Unit Test
+- [x] Test "bad connection" (Pagination)
 - [ ] Endpoint error handling component
-- [ ] Delete confirmation dialog
-- [ ] Post delete button component
-- [ ] Post card component
-- [ ] Filter Posts by userId with test
-- [ ] List Posts with test
+- [x] Delete confirmation dialog
+- [x] Post delete button component
+- [x] Post card component
+- [x] Filter Posts by userId and test
+- [x] List Posts and test
 - [x] Seed scripts from https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts.
 - [x] Setup Prisma ORM (add .env to git)
 - [x] Init NextJS project
