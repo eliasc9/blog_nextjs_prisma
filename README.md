@@ -22,6 +22,7 @@ npx prisma db seed
 
 ## TODO (Higher priority at the bottom)
 
+- [ ] QA: 404, empty, return link to correct
 - [ ] Jest for test
 - [ ] Production ready
 - [ ] Test "bad connection" (Pagination)

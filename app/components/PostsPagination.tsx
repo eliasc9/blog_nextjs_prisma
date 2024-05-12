@@ -38,11 +38,11 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
         <li key={i}>
           <button
             onClick={() => onClick(i)}
-            className={`px-4 h-10 leading-tight border ${
+            className={`py-2 px-4 border shadow ${
               i === currentPage
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-500 bg-white border-gray-300'
-            } hover:bg-gray-100`}
+                ? 'bg-primary text-neutral-50'
+                : ''
+            } hover:bg-secondary`}
           >
             {i}
           </button>
@@ -55,14 +55,11 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
 
   return (
     <>
-      <ul className="inline-flex -space-x-px text-base h-10">
+      <ul className="inline-flex -space-x-px text-base flex-row justify-center">
         <li>
           <button
             onClick={() => onClick(currentPage - 1)}
-            className={`px-4 h-10 leading-tight border rounded-l-lg ${
-              currentPage === 1 ? 'bg-gray-200 cursor-not-allowed' : 'bg-white hover:bg-gray-100'
-            }`}
-            disabled={currentPage === 1}
+            className='py-2 px-4 border rounded-l-lg shadow disabled:opacity-50 hover:bg-secondary disabled:hover:bg-white' disabled={currentPage === 1}
           >
             Previous
           </button>
@@ -71,10 +68,7 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
         <li>
           <button
             onClick={() => onClick(currentPage + 1)}
-            className={`px-4 h-10 leading-tight border rounded-r-lg ${
-              currentPage === totalPages ? 'bg-gray-200 cursor-not-allowed' : 'bg-white hover:bg-gray-100'
-            }`}
-            disabled={currentPage === totalPages}
+            className='py-2 px-4 border rounded-r-lg shadow disabled:opacity-50 hover:bg-secondary disabled:hover:bg-white' disabled={currentPage === totalPages}
           >
             Next
           </button>

@@ -10,8 +10,8 @@ export type PostCardProps = {
 export default async function PostsList({id, title, body, userId} : PostCardProps) {
   return (
     <>
-      <li className='block rounded-lg p-2 shadow'>
-        <h2 className='font-bold'>{title}</h2>
+      <li className='block rounded-lg p-2 shadow border'>
+        <h2 className='font-bold text-xl'>{title}</h2>
         <p>{body}</p>
         <small>userId: {userId}</small> <small>postId: {id}</small>
         <PostDeleteButton postId={id} />

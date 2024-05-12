@@ -43,14 +43,19 @@ export default async function Page({params, searchParams}: PageProps) {
 
   const totalPages = Math.ceil(totalPosts / PER_PAGE)
 
+  // <Error message='No error haha' />
+
   return (
-    <div className="container mx-auto">
-      <Error message='No error haha' />
-      <PostsFilter />
-      <PostsPagination totalPages={totalPages} page={page} />
+    <div className="container mx-auto flex flex-col space-y-2 py-4">
+      <div className='flex flex-row justify-between'>
+        <h1 className='pl-6 text-2xl font-bold'>Blog posts</h1>
+        <PostsFilter currentUserId={userId}/>
+      </div>
+
       <Suspense fallback="Loading...">
         <PostsList posts={posts} />
       </Suspense>
+      <PostsPagination totalPages={totalPages} page={page} />
     </div>
   )
 }

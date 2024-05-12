@@ -20,7 +20,7 @@ export default async function PostDeleteButton({ postId } : PostDeleteButtonProp
       <PostDeleteConfirmDialog />
       <form action={deletePost}>
         <input type="hidden" name="postId" value={postId} />
-        <button className='bg-red-300'>Delete</button>
+        <button className='p-2 rounded shadow bg-red-500 text-white'>Delete</button>
       </form>
     </>
   )
