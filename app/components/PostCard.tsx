@@ -1,5 +1,7 @@
 import PostDeleteConfirmDialog from '@/app/components/PostDeleteConfirmDialog'
 import PostDeleteButton from '@/app/components/PostDeleteButton'
+import ErrorBoundary from './ErrorBoundary'
+import Error from './Error'
 
 export type PostCardProps = {
   id: number,
@@ -21,9 +23,11 @@ export default async function PostCard({id, title, body, userId} : PostCardProps
            <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">userId {userId}</span>
           </div>
           
-          <PostDeleteConfirmDialog key={id} postId={id} >
-            <PostDeleteButton postId={id} />
-          </PostDeleteConfirmDialog>
+          <ErrorBoundary fallback={<Error title='An error has occurred' message='Please try again later.' />}>
+            <PostDeleteConfirmDialog key={id} postId={id}>
+              <PostDeleteButton postId={id} />
+            </PostDeleteConfirmDialog>
+          </ErrorBoundary>
         </div>
       </li>
     </>

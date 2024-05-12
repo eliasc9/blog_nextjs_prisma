@@ -22,12 +22,11 @@ npx prisma db seed
 
 ## TODO (Higher priority at the bottom)
 
-- [ ] QA: 404, empty, return link to correct, colores (dark/white)
-- [ ] Jest for test
 - [ ] Production ready
-- [ ] Unit Test
+- [ ] QA: 404, empty, return link to correct, colors (dark/white)
+- [ ] Unit Test using Jest
 - [x] Test "bad connection" (Pagination)
-- [ ] Endpoint error handling component
+- [x] Endpoint error handling component
 - [x] Delete confirmation dialog
 - [x] Post delete button component
 - [x] Post card component

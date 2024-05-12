@@ -1,20 +1,3 @@
-/*
-This is /pages as required ✅
-
-# Filter by userId and pagination ✅
-
-List or "Card" elements ✅
-
-Use tailwind css ✅
-
-Each card has a DELETE BUTTON ✅
-
-Confirmation dialog before DELETE (in progress)
-
-Show an error (in progress)
-*/
-// 'use client';
-
 import prisma from '@/app/lib/db';
 import PostsList from '@/app/components/PostsList'
 import PostsFilter from '@/app/components/PostsFilter'
@@ -43,19 +26,21 @@ export default async function Page({params, searchParams}: PageProps) {
 
   const totalPages = Math.ceil(totalPosts / PER_PAGE)
 
-  // <Error message='No error haha' />
-
   return (
-    <div className="container mx-auto flex flex-col space-y-2 py-4">
-      <div className='flex flex-row justify-between'>
-        <h1 className='pl-6 text-2xl font-bold'>Blog posts</h1>
-        <PostsFilter currentUserId={userId}/>
+    <>
+      <div className="container mx-auto flex flex-col space-y-2 my-6">
+        <div className='flex flex-row justify-between px-6'>
+          <h1 className='text-2xl font-bold'>Blog posts</h1>
+          <PostsFilter currentUserId={userId}/>
+        </div>
+        <Suspense fallback="Loading...">
+          <PostsList posts={posts} />
+        </Suspense>
+        <PostsPagination totalPages={totalPages} page={page} />
+        {/* <Error title='Error deleting a post' message='The post could not be deleted'/> */}
       </div>
-
-      <Suspense fallback="Loading...">
-        <PostsList posts={posts} />
-      </Suspense>
-      <PostsPagination totalPages={totalPages} page={page} />
-    </div>
+      <div className="h-32"></div>
+      
+    </>
   )
 }
