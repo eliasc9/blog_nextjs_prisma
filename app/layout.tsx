@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+//import PostDeleteButton from '@/app/components/PostDeleteButton'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
