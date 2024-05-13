@@ -10,9 +10,7 @@ export default function PostsFilter({ currentUserId } : { currentUserId: number 
   const [userId, setUserId] = useState(currentUserId ? String(currentUserId) : "");
 
   useEffect(() => {
-    if (currentUserId) {
-      setUserId(String(currentUserId));
-    }
+    setUserId(currentUserId ? String(currentUserId) : "");
   }, [currentUserId]);
 
   const createQueryString = useCallback(

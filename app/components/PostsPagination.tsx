@@ -16,9 +16,7 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
   const [currentPage, setCurrentPage] = useState(page);
 
   useEffect(() => {
-    if (page) {
-      setCurrentPage(page);
-    }
+    setCurrentPage(page);
   }, [page]);
 
   const createQueryString = useCallback(
