@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter, useSearchParams  } from 'next/navigation'
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 
 type PostsPaginationProps = {
   totalPages: number,
@@ -14,6 +14,12 @@ export default function PostsPagination({ totalPages, page }: PostsPaginationPro
   const searchParams = useSearchParams()
 
   const [currentPage, setCurrentPage] = useState(page);
+
+  useEffect(() => {
+    if (page) {
+      setCurrentPage(page);
+    }
+  }, [page]);
 
   const createQueryString = useCallback(
     (name: string, value: string) => {

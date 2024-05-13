@@ -1,13 +1,19 @@
 'use client'
 
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 export default function PostsFilter({ currentUserId } : { currentUserId: number | undefined}) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const [userId, setUserId] = useState(currentUserId ? String(currentUserId) : "");
+
+  useEffect(() => {
+    if (currentUserId) {
+      setUserId(String(currentUserId));
+    }
+  }, [currentUserId]);
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
