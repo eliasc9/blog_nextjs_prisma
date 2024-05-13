@@ -1,9 +1,5 @@
 # Blog NextJS + Prisma
 
-### Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eliasc9/blog_nextjs_prisma)
-
 ### Setup Prisma
 
 Run migrations to create the SQLite database

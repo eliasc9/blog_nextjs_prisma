@@ -1,6 +1,6 @@
-- I will keep the recommended tecnologies because this is a technical test
-- While it is expected that an application of this type will have security checks when deletions or add post functionality, it is not required. It is assumed not necessary (in a real example, it could be another application that does it)
-- Add production ready
-- Here, I use https://nextjs.org/docs/app/building-your-application/routing
-- I guess a default light theme would be fine since users travel a lot (might be outdoors)
-- The posts has only one user associated
+- I will keep the recommended technologies because this is a technical test.
+- While it is expected that an application of this type will have security checks when deletions or adding post functionality, it is not required. It is assumed to be unnecessary (in a real example, it could be another application that does it).
+- Here, I use https://nextjs.org/docs/app/building-your-application/routing.
+- I guess a default light theme would be fine since users travel a lot (might be outdoors).
+- The posts has only one user associated.
+- Although I started by creating an API I wanted to do it the "nextjs" way with server actions. It is to challenge me to learn that way, and not because it is better or worse.
